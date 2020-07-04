@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Sign Up</title>
+    <!-- Bootstrap CSS  Linking -->
+    <link rel="stylesheet" href="library_files/bootstrap.min.css">
+    <!-- Own Styling Linking -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+            <!-- First row -->
+            <div class="row">
+                <!-- For Navigation -->
+                <div class="col-12 text-center navbark">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler hamber" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                          </ul>
+                          <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                        </div>
+                    </nav>                
+               </div>
+            </div>
+            
+            <!-- Second row for spacing-->
+            <div class="row vh">
+                
+                <div class="col-1 col-sm-2 col-lg-3">
+                    <!-- Left Side -->
+                </div>
+
+                <div class="col-10 col-sm-8 col-lg-6 rounded login">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control Inputbox" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control Inputbox" id="exampleInputPassword1" name="password">
+                        </div>
+                        <div class="form-group form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary logn">Login</button>
+                      </form>
+                </div>
+
+                <div class="col-1 col-sm-2 col-lg-3">
+                    <!-- Right Side -->
+                </div>
+
+            </div>
+
+            <!-- Footer row -->
+            <div class="row footer">
+                <div class="col-12 text-center">
+                    &copy; right protected
+                    <a href="index-2.html"> next page</a>
+                </div>
+            </div>
+
+    </div>
+
+
+    <!-- jQuery, Popper & Bootstrap linking   -->
+    <script src="library_files/jquery-3.4.1.min.js"></script>
+    <script src="library_files/popper.min.js"></script>
+    <script src="library_files/bootstrap.min.js"></script>
+    <!-- Own JavaScript linking -->
+    <script src="app.js"></script>
+</body>
+</html>
