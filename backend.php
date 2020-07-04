@@ -15,7 +15,7 @@
         echo "DB Connected";
 
 
-        $query = $db_con->prepare("SELECT USER_NAME FROM login");
+        $query = $db_con->prepare("SELECT USER_NAME,PASSWORD FROM login");
         $query -> execute();
         $query -> setFetchMode(PDO::FETCH_ASSOC);
         $data = $query -> fetchAll();
@@ -29,7 +29,15 @@
         //     echo "<br/><br/><br/>";
         // }
         foreach(new RecursiveArrayIterator($data) as $key=>$value){
-            echo $value["USER_NAME"]."<br/>";
+            // echo $value["USER_NAME"]."    ".$value["PASSWORD"]."<br/>";
+            
+            if(($_POST["email"] == $value["USER_NAME"]) && $_POST["password"] == $value["PASSWORD"])
+            {
+                echo "Hello ". $value["USER_NAME"] ." You'r Loged In ";
+                // echo "<bt/> ".$_POST["password"].' '.$value["PASSWORD"];
+                die();
+                echo "<br/> not die";
+            }
         }
 
         // print_r($data);
