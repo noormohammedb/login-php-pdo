@@ -13,11 +13,32 @@
 
         $db_con ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         echo "DB Connected";
+
+
+        $query = $db_con->prepare("SELECT USER_NAME FROM login");
+        $query -> execute();
+        $query -> setFetchMode(PDO::FETCH_ASSOC);
+        $data = $query -> fetchAll();
+        echo "<br/>";
+
+        // foreach($data as $key1=>$main_value){
+        //     echo $key."   ";
+        //     foreach($main_value as $key2=>$value){
+        //         echo $value;
+        //     }
+        //     echo "<br/><br/><br/>";
+        // }
+        foreach(new RecursiveArrayIterator($data) as $key=>$value){
+            echo $value["USER_NAME"]."<br/>";
+        }
+
+        // print_r($data);
+        
     }catch(PDOException $e){
         echo "DB Connection Error : ";
         echo $e->getMessage();
     }
 
     // if($db_con->PDO)
-
+    $db_con = null;
 ?>
