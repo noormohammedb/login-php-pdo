@@ -2,14 +2,35 @@
     // echo "Hello World!"."<br/>";
     // echo $_POST["email"]."<br/>".$_POST["password"];
 
+use function PHPSTORM_META\type;
+
     $useremail = $_POST["email"];
     $userpassword = md5($_POST["password"]);
+    
+    $file = fopen("credentials.txt","r+");
+    
+    $host = fgets($file);
+    $user = fgets($file);
+    $pass = fgets($file);
+    $dbName = fgets($file);
+    $tableName = fgets($file);
+    
+    fclose($file);
+    
+    // echo $host."    ".gettype($host)."<br/> ";
+    // echo $user."    ".gettype($user)."<br/> ";
+    // echo $pass."    ".gettype($pass)."<br/> ";
+    // echo $dbName."    ".gettype($dbName)."<br/> ";
+    // echo $tableName."    ".gettype($tableName)."<br/> ";
+    
+    $host = str_replace(array("\n", "\r"),'',$host);
+    $user = str_replace(array("\n", "\r"),'',$user);
+    $pass = str_replace(array("\n", "\r"),'',$pass);
+    $dbName = str_replace(array("\n", "\r"),'',$dbName);
+    $tableName = str_replace(array("\n", "\r"),'',$tableName);
 
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $dbName = "test";
     $dsn = "mysql:host=".$host.";dbname=".$dbName;
+    // echo "<br/> ".$dsn;
 
     try{
         $db_con = new PDO($dsn, $user, $pass);
@@ -17,8 +38,8 @@
         $db_con ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         // echo "DB Connected";
 
-
-        $query = $db_con->prepare("SELECT USER_NAME, USER_EMAIL, USER_PASSWORD FROM login_details");
+        $qur = "SELECT USER_NAME, USER_EMAIL, USER_PASSWORD FROM $tableName";
+        $query = $db_con->prepare($qur);
         $query -> execute();
         $query -> setFetchMode(PDO::FETCH_ASSOC);
         $data = $query -> fetchAll();

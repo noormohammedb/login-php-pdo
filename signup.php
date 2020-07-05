@@ -5,10 +5,28 @@
     $useremail = $_POST["email"];
     $userpassword = md5($_POST["password"]);
 
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $dbName = "test";
+    $file = fopen("credentials.txt","r+");
+    
+    $host = fgets($file);
+    $user = fgets($file);
+    $pass = fgets($file);
+    $dbName = fgets($file);
+    $tableName = fgets($file);
+    
+    fclose($file);
+
+    // echo $host."    ".gettype($host)."<br/> ";
+    // echo $user."    ".gettype($user)."<br/> ";
+    // echo $pass."    ".gettype($pass)."<br/> ";
+    // echo $dbName."    ".gettype($dbName)."<br/> ";
+    // echo $tableName."    ".gettype($tableName)."<br/> ";
+
+    $host = str_replace(array("\n", "\r"),'',$host);
+    $user = str_replace(array("\n", "\r"),'',$user);
+    $pass = str_replace(array("\n", "\r"),'',$pass);
+    $dbName = str_replace(array("\n", "\r"),'',$dbName);
+    $tableName = str_replace(array("\n", "\r"),'',$tableName);
+
     $dsn = "mysql:host=".$host.";dbname=".$dbName;
 
     // echo "<br/> md5 : ". md5($_POST["password"]). "<br/>";
