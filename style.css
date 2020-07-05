@@ -52,6 +52,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+.opton-toggler{
+    /* margin: 0; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.a-text{
+    text-decoration: none;
+    color: inherit;
+}
 .footer{
     background-color: #2e1a1a59;
 }
