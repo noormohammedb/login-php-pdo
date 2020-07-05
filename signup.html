@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | App-name</title>
+    <title>Sign Up | App-name</title>
     <!-- Bootstrap CSS  Linking -->
     <link rel="stylesheet" href="library_files/bootstrap.min.css">
     <!-- Own Styling Linking -->
@@ -61,20 +61,24 @@
                 </div>
 
                 <div class="col-10 col-sm-8 col-lg-6 rounded login">
-                    <form action="login-validation.php" method="POST">
+                    <form action="signup.php" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputUserName">User Name</label>
+                            <input type="text" class="form-control Inputbox" id="exampleInputUserName" name="user_name" aria-describedby="emailHelp">
+                          </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control Inputbox" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                          <input type="text" class="form-control Inputbox" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
                           <input type="password" class="form-control Inputbox" id="exampleInputPassword1" name="password">
                         </div>
-                        <div class="form-group form-check">
+                        <!-- <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary logn">Login</button>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary signup">Signup</button>
                       </form>
                 </div>
 
