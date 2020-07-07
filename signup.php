@@ -47,6 +47,7 @@
         // $data = $query -> fetchAll();
 
         // echo "<br/> Insertion Sucess <br/>";
+		echo '<br/> Signup Success <br/> <a href="index.html">please login</a>';
     }
     catch(PDOException $e){
         echo "DataBase Connection Error <br/>CONTACT ADMINISTRATOR".$e;
